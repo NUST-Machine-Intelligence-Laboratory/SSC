@@ -95,7 +95,7 @@ def alignment_loss(pred, sp, label, criterion):
         single_att = oriv[i]
         region = np.zeros_like(single_att)
         region[single_att > thr] = 1.0
-        kernel = np.ones((16, 16), np.uint8)
+        kernel = np.ones((8, 8), np.uint8)
         region = cv2.erode(region.astype('uint8'), kernel, iterations=1)
         oriv[i] = oriv[i] * region
     

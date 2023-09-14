@@ -62,6 +62,7 @@ if __name__ == '__main__':
     parser.add_argument("--ir_label_out_dir", default="result/ir_label", type=str)
     parser.add_argument("--sem_seg_out_dir", default="result/sem_seg", type=str)
     parser.add_argument("--ins_seg_out_dir", default="result/ins_seg", type=str)
+    parser.add_argument("--score_dir", default="result/score", type=str)
 
     # Step
     parser.add_argument("--train_cam_pass", default=True)
@@ -84,6 +85,7 @@ if __name__ == '__main__':
     os.makedirs(args.ir_label_out_dir, exist_ok=True)
     os.makedirs(args.sem_seg_out_dir, exist_ok=True)
     os.makedirs(args.ins_seg_out_dir, exist_ok=True)
+    os.makedirs(args.score_dir, exist_ok=True)
 
     pyutils.Logger(args.log_name + '.log')
     print(vars(args))
